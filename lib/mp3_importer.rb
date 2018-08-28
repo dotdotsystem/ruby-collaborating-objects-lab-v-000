@@ -1,3 +1,4 @@
+require "pry"
 class MP3Importer
   attr_accessor :path
 
@@ -7,6 +8,7 @@ class MP3Importer
 
   def files
     Dir[@path+"/*.mp3"].collect {|file| file.split("/").last}
+    binding.pry
   end
 
   def import
